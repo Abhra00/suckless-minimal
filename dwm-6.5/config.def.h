@@ -3,6 +3,7 @@
 /* fore restoring dwm */
 #define SESSION_FILE "/tmp/dwm-session"
 
+/* windowicon */
 #define ICONSIZE 16   /* icon size */
 #define ICONSPACING 5 /* space between icon and title */
 
@@ -26,13 +27,47 @@ static int showbar                       = 1;        /* 0 means no bar */
 static int topbar                        = 1;        /* 0 means bottom bar */
 static char font[]                       = "monospace:size=10";
 static char dmenufont[]                  = "monospace:size=10";
-static const char *fonts[]               = { font, "Noto Sans CJK JP:size=10", "Symbols Nerd Font:size=12" };
+static const char *fonts[]               = { font, "Noto Sans CJK JP:style=bold:size=10", "Symbols Nerd Font:size=12" };
 static char normbgcolor[]                = "#222222";
 static char normbordercolor[]            = "#444444";
 static char normfgcolor[]                = "#bbbbbb";
 static char selfgcolor[]                 = "#eeeeee";
 static char selbordercolor[]             = "#770000";
 static char selbgcolor[]                 = "#005577";
+static char termcol0[]                   = "#282828"; // background
+static char termcol1[]                   = "#cc241d"; // red
+static char termcol2[]                   = "#98971a"; // green
+static char termcol3[]                   = "#d79921"; // yellow
+static char termcol4[]                   = "#458588"; // blue
+static char termcol5[]                   = "#b16286"; // purple
+static char termcol6[]                   = "#689d6a"; // aqua
+static char termcol7[]                   = "#a89984"; // gray
+static char termcol8[]                   = "#928374"; // bright black
+static char termcol9[]                   = "#fb4934"; // bright red
+static char termcol10[]                  = "#b8bb26"; // bright green
+static char termcol11[]                  = "#fabd2f"; // bright yellow
+static char termcol12[]                  = "#83a598"; // bright blue
+static char termcol13[]                  = "#d3869b"; // bright purple
+static char termcol14[]                  = "#8ec07c"; // bright aqua
+static char termcol15[]                  = "#ebdbb2"; // white
+static char *termcolor[] 		 = {
+   termcol0,
+   termcol1,
+   termcol2,
+   termcol3,
+   termcol4,
+   termcol5,
+   termcol6,
+   termcol7,
+   termcol8,
+   termcol9,
+   termcol10,
+   termcol11,
+   termcol12,
+   termcol13,
+   termcol14,
+   termcol15,
+};
 static char *colors[][3] = {
        /*                 fg           bg           border   */
        [SchemeNorm]   = { normfgcolor, normbgcolor, normbordercolor },
@@ -74,7 +109,7 @@ static const Rule rules[] = {
 	 */
 	/* class     instance   title           tags mask  isfloating  isterminal  noswallow  monitor */
 	{ "Gimp",    NULL,      NULL,           0,         1,          0,           0,        -1 },
-	{ "Firefox", NULL,      NULL,           1 << 8,    0,          0,          -1,        -1 },
+	{ "firefox", NULL,      NULL,           1 << 8,    0,          0,          -1,        -1 },
 	{ "St",      NULL,      NULL,           0,         0,          1,           0,        -1 },
         { NULL,      "spterm",  NULL,           SPTAG(0),  1,          1,           0,        -1 },
         { NULL,      "spfm",    NULL,           SPTAG(1),  1,          1,           0,        -1 },
@@ -92,6 +127,7 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 #define FORCE_VSPLIT 1  /* nrowgrid layout: force two clients to always split vertically */
 #include "vanitygaps.c"
 #include "shift-tools.c"
+#define STATUSBAR "dwmblocks"
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
@@ -125,6 +161,22 @@ ResourcePref resources[] = {
 		{ "color15",		STRING,	 &normfgcolor },
 		{ "color0",		STRING,	 &selfgcolor },
 		{ "color6",		STRING,	 &selbgcolor },
+		{ "color0",             STRING,  &termcol0 },
+		{ "color1",             STRING,  &termcol1 },
+		{ "color2",             STRING,  &termcol2 },
+		{ "color3",             STRING,  &termcol3 },
+		{ "color4",             STRING,  &termcol4 },
+		{ "color5",             STRING,  &termcol5 },
+		{ "color6",             STRING,  &termcol6 },
+		{ "color7",             STRING,  &termcol7 },
+		{ "color8",             STRING,  &termcol8 },
+		{ "color9",             STRING,  &termcol9 },
+		{ "color10",            STRING,  &termcol10 },
+		{ "color11",            STRING,  &termcol11 },
+		{ "color12",            STRING,  &termcol12 },
+		{ "color13",            STRING,  &termcol13 },
+		{ "color14",            STRING,  &termcol14 },
+		{ "color15",            STRING,  &termcol15 },
 		{ "borderpx",		INTEGER, &borderpx },
 		{ "snap",		INTEGER, &snap },
 		{ "showbar",		INTEGER, &showbar },
@@ -168,14 +220,14 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *pmenucmd[] = { "pmenu", NULL };
 
 /* volume control */
-static const char *vol_up[]   = { "volume-dwm", "up",   NULL };
-static const char *vol_down[] = { "volume-dwm", "down", NULL };
-static const char *vol_mute[] = { "volume-dwm", "mute", NULL };
-static const char *mic_mute[] = { "audiomicmute-dwm",   NULL };
+static const char *vol_up[]   = { "volume", "up",   NULL };
+static const char *vol_down[] = { "volume", "down", NULL };
+static const char *vol_mute[] = { "volume", "mute", NULL };
+static const char *mic_mute[] = { "audiomicmute",   NULL };
 
 /* brightness control */
-static const char *light_up[]   = { "backlight-dwm", "up",   NULL };
-static const char *light_down[] = { "backlight-dwm", "down", NULL };
+static const char *light_up[]   = { "backlight", "up",   NULL };
+static const char *light_down[] = { "backlight", "down", NULL };
 
 /* dmenuemojicmd */
 static const char *emojicmd[]   = { "dmenuunicode",   NULL };
@@ -278,7 +330,12 @@ static const Button buttons[] = {
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
-	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
+	{ ClkStatusText,        0,              Button1,        sigstatusbar,   {.i = 1} },
+	{ ClkStatusText,        0,              Button2,        sigstatusbar,   {.i = 2} },
+	{ ClkStatusText,        0,              Button3,        sigstatusbar,   {.i = 3} },
+        { ClkStatusText,        0,              Button4,        sigstatusbar,   {.i = 4} },
+        { ClkStatusText,        0,              Button5,        sigstatusbar,   {.i = 5} },
+        { ClkStatusText,        ShiftMask,      Button1,        sigstatusbar,   {.i = 6} },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
