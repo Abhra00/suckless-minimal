@@ -21,7 +21,6 @@ typedef struct {
 	int screen;
 	Window root;
 	Drawable drawable;
-	Picture picture;
 	GC gc;
 	Clr *scheme;
 	Fnt *fonts;
@@ -47,19 +46,14 @@ Clr *drw_scm_create(Drw *drw, char *clrnames[], size_t clrcount);
 Cur *drw_cur_create(Drw *drw, int shape);
 void drw_cur_free(Drw *drw, Cur *cursor);
 
-
 /* Drawing context manipulation */
 void drw_setfontset(Drw *drw, Fnt *set);
 void drw_setscheme(Drw *drw, Clr *scm);
-
-/* winicon drawing function */
-Picture drw_picture_create_resized(Drw *drw, char *src, unsigned int src_w, unsigned int src_h, unsigned int dst_w, unsigned int dst_h);
 
 /* Drawing functions */
 void drw_rect(Drw *drw, int x, int y, unsigned int w, unsigned int h, int filled, int invert);
 void drw_polygon(Drw *drw, int x, int y, int ow, int oh, int sw, int sh, const XPoint *points, int npoints, int shape, int filled);
 int drw_text(Drw *drw, int x, int y, unsigned int w, unsigned int h, unsigned int lpad, const char *text, int invert);
-void drw_pic(Drw *drw, int x, int y, unsigned int w, unsigned int h, Picture pic);
 
 /* Map functions */
 void drw_map(Drw *drw, Window win, int x, int y, unsigned int w, unsigned int h);
