@@ -5,10 +5,9 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Iosevka:pixelsize=12:antialias=true:autohint=true";
+static char *font = "JetBrainsMonoNerdFont:pixelsize=12:antialias=true:autohint=true";
 /* Spare fonts */
 static char *font2[] = {
-	"FantasqueSansM Nerd Font:pixelsize=14:antialias=true:autohint=true",
 	"NotoColorEmoji:pixelsize=10:antialias=true:autohint=true",
 };
 
