@@ -234,7 +234,7 @@ static char *copyoutput[] = { "/bin/sh", "-c", "st-copyout", "externalpipe", NUL
 
 /* Internal keyboard shortcuts. */
 #define MODKEY Mod1Mask
-#define TERMMOD (ControlMask|ShiftMask)
+#define TERMMOD (Mod1Mask|ShiftMask)
 
 static Shortcut shortcuts[] = {
 	/* mask                 keysym          function        argument */
@@ -247,18 +247,35 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
 	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
 	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
-	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
+	{ MODKEY,               XK_c,           clipcopy,       {.i =  0} },
+	{ ShiftMask,            XK_Insert,      clippaste,      {.i =  0} },
+	{ MODKEY,               XK_v,           clippaste,      {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
-	{ MODKEY,               XK_J,           kscrollup,      {.i = -1} },
-	{ MODKEY,               XK_K,           kscrolldown,    {.i = -1} },
-        { MODKEY,               XK_l,           externalpipe,   {.v = openurlcmd } },
-        { MODKEY,               XK_y,           externalpipe,   {.v = copyurlcmd } },
-        { MODKEY,               XK_o,           externalpipe,   {.v = copyoutput } },
-  	{ MODKEY,		XK_s,		changealpha,	{.f = -0.05} },
-  	{ MODKEY,		XK_a,		changealpha,	{.f = +0.05} },
-	{ MODKEY,		XK_m,		changealpha,	{.f = +2.00} },
+	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
+	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
+	{ MODKEY,               XK_Page_Up,     kscrollup,      {.i = -1} },
+	{ MODKEY,               XK_Page_Down,   kscrolldown,    {.i = -1} },
+	{ MODKEY,               XK_k,           kscrollup,      {.i =  1} },
+	{ MODKEY,               XK_j,           kscrolldown,    {.i =  1} },
+	{ MODKEY,               XK_Up,          kscrollup,      {.i =  1} },
+	{ MODKEY,               XK_Down,        kscrolldown,    {.i =  1} },
+	{ MODKEY,               XK_u,           kscrollup,      {.i = -1} },
+	{ MODKEY,               XK_d,           kscrolldown,    {.i = -1} },
+	{ MODKEY,		XK_s,		changealpha,	{.f = -0.05} },
+	{ MODKEY,		XK_a,		changealpha,	{.f = +0.05} },
+	{ MODKEY,               XK_m,           changealpha,    {.f = +2.00} },
+	{ TERMMOD,              XK_Up,          zoom,           {.f = +1} },
+	{ TERMMOD,              XK_Down,        zoom,           {.f = -1} },
+	{ TERMMOD,              XK_K,           zoom,           {.f = +1} },
+	{ TERMMOD,              XK_J,           zoom,           {.f = -1} },
+	{ TERMMOD,              XK_U,           zoom,           {.f = +2} },
+	{ TERMMOD,              XK_D,           zoom,           {.f = -2} },
+	{ MODKEY,               XK_l,           externalpipe,   {.v = openurlcmd } },
+	{ MODKEY,               XK_y,           externalpipe,   {.v = copyurlcmd } },
+	{ MODKEY,               XK_o,           externalpipe,   {.v = copyoutput } },
 };
+
 
 /*
  * Special keys (change & recompile st.info accordingly)
