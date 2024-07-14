@@ -129,40 +129,44 @@ float alpha = 1.0;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-    "#26233a",
-    "#eb6f92",
-    "#9ccfd8",
-    "#f6c177",
-    "#31748f",
-    "#c4a7e7",
-    "#ebbcba",
-    "#e0def4",
-    "#6e6a86",
-    "#eb6f92",
-    "#9ccfd8",
-    "#f6c177",
-    "#31748f",
-    "#c4a7e7",
-    "#ebbcba",
-    "#e0def4",
-    
+    /* 8 normal colors */
+    "#15161e", /* black   */
+    "#f7768e", /* red     */
+    "#9ece6a", /* green   */
+    "#e0af68", /* yellow  */
+    "#7aa2f7", /* blue    */
+    "#bb9af7", /* magenta */
+    "#7dcfff", /* cyan    */
+    "#a9b1d6", /* white   */
+
+    /* 8 bright colors */
+    "#414868", /* black   */
+    "#f7768e", /* red     */
+    "#9ece6a", /* green   */
+    "#e0af68", /* yellow  */
+    "#7aa2f7", /* blue    */
+    "#bb9af7", /* magenta */
+    "#7dcfff", /* cyan    */
+    "#c0caf5", /* white   */
+
     [255] = 0,
 
     /* more colors can be added after 255 to use with DefaultXX */
-    "#191724",
-    "#ebbcba",
-    "#ebbcba",
-    "#191724",
+    "#c0caf5", /* cursorColor */
+    "#1a1b26", /* reverse cursor color */
+    "#c0caf5", /* default foreground color */
+    "#1a1b26", /* default background color */
 };
+
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 257;
-unsigned int defaultbg = 256;
-unsigned int defaultcs = 258;
-static unsigned int defaultrcs = 259;
+unsigned int defaultfg = 258;
+unsigned int defaultbg = 259;
+unsigned int defaultcs = 256;
+static unsigned int defaultrcs = 257;
 
 /*
  * https://invisible-island.net/xterm/ctlseqs/ctlseqs.html#h4-Functions-using-CSI-_-ordered-by-the-final-character-lparen-s-rparen:CSI-Ps-SP-q.1D81
