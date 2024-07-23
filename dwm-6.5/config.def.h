@@ -1,5 +1,8 @@
 /* See LICENSE file for copyright and license details. */
 
+#define ICONSIZE 16   /* icon size */
+#define ICONSPACING 5 /* space between icon and title */
+
 /* appearance */
 static unsigned int borderpx  	    	 = 3;        /* border pixel of windows */
 static const unsigned int fborderpx      = 5;        /* border pixel of floating windows */
@@ -64,7 +67,7 @@ static char *colors[][3] 		 = {
        /*                 fg           bg           border   */
        [SchemeNorm]   = { normfgcolor, normbgcolor, normbordercolor },
        [SchemeSel]    = { selfgcolor,  selbgcolor,  selbordercolor  },
-       [SchemeTitle]  = { selfgcolor,  selbgcolor,  selbordercolor  },
+       [SchemeTitle]  = { normfgcolor, normbgcolor, normbordercolor },
 };
 
 
