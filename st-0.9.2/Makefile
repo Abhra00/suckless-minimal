@@ -50,7 +50,7 @@ install: st
 	tic -sx st.info
 	@echo Please see the README file regarding the terminfo entry of st.
         mkdir -p $(DESTDIR)$(APPPREFIX)
-	cp -f st.desktop $(DESTDIR)$(APPPREFIX)
+        cp -f st.desktop $(DESTDIR)$(APPPREFIX)
 	mkdir -p $(DESTDIR)$(ICONPREFIX)
 	[ -f $(ICONNAME) ] && cp -f $(ICONNAME) $(DESTDIR)$(ICONPREFIX) || :
 
