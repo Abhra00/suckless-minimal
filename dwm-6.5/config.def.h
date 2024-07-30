@@ -1,6 +1,6 @@
 /* See LICENSE file for copyright and license details. */
 
-#define ICONSIZE 16   /* icon size */
+#define ICONSIZE 20   /* icon size */
 #define ICONSPACING 5 /* space between icon and title */
 
 /* appearance */
@@ -237,6 +237,8 @@ static const char *torrentcmd[] = { "td-toggle",   NULL };
 /* screenshotcmd */
 static const char *sscmd[]      = { "flameshot", "gui", NULL };
 
+/* jgmenucmd */
+static const char *jgmenucmd[] = {"jgmenu_run", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        	function        argument */
@@ -328,4 +330,5 @@ static const Button buttons[] = {
 	{ ClkTagBar,            0,              	Button3,        toggleview,     {0} },
 	{ ClkTagBar,		0,		        Button4,	shiftview,	{.i = -1} },
 	{ ClkTagBar,		0,			Button5,	shiftview,	{.i = 1} },
+	{ClkRootWin, 		0, 			Button3, 	spawn, 		{.v = jgmenucmd} },
 };

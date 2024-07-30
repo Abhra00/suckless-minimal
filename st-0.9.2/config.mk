@@ -5,6 +5,7 @@ VERSION = 0.9.2
 
 # paths
 PREFIX = /usr/local
+APPPREFIX = $(PREFIX)/share/applications
 MANPREFIX = $(PREFIX)/share/man
 ICONPREFIX = $(PREFIX)/share/pixmaps
 ICONNAME = st.png
