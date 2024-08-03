@@ -19,8 +19,8 @@ static const int showsystray             = 1;        /* 0 means no systray */
 static int showbar           		 = 1;        /* 0 means no bar */
 static int topbar            		 = 1;        /* 0 means bottom bar */
 static int user_bh                       = 6;        /* 2 is the default spacing around the bar's font */
-static char dmenufont[]      		 = "monospace:size=10";
-static const char *fonts[]         	 = { "monospace:size=10", "Noto Sans CJK JP:style=bold:size=10", "NotoColorEmoji:pixelsize=10:antialias=true:autohint=true"  };
+static char dmenufont[]      		 = "IosevkaMayukaiCodepro:size=10";
+static const char *fonts[]         	 = { "IosevkaMayukaiCodepro:size=10", "Noto Sans CJK JP:style=bold:size=10", "NotoColorEmoji:pixelsize=10:antialias=true:autohint=true"  };
 static char normbgcolor[]          	 = "#222222";
 static char normbordercolor[]      	 = "#444444";
 static char normfgcolor[]          	 = "#bbbbbb";
