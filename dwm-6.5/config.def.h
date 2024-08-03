@@ -67,6 +67,7 @@ static char *colors[][3] 		 = {
        [SchemeNorm]   = { normfgcolor, normbgcolor, normbordercolor },
        [SchemeSel]    = { selfgcolor,  selbgcolor,  selbordercolor  },
        [SchemeTitle]  = { selfgcolor,  selbgcolor,  normbordercolor },
+       [SchemeLayout] = { termcol3,    normbgcolor, normbordercolor },
 };
 
 
@@ -150,12 +151,12 @@ static const Layout layouts[] = {
  * Xresources preferences to load at startup
  */
 ResourcePref resources[] = {
-		{ "color0",		STRING,	&normbordercolor },
-		{ "color8",		STRING,	&selbordercolor },
-		{ "color0",		STRING,	&normbgcolor },
-		{ "color4",		STRING,	&normfgcolor },
-		{ "color0",		STRING,	&selfgcolor },
-		{ "color4",		STRING,	&selbgcolor },
+		{ "color0",		STRING,	 &normbordercolor },
+		{ "color9",		STRING,	 &selbordercolor },
+		{ "color0",		STRING,	 &normbgcolor },
+		{ "color15",		STRING,	 &normfgcolor },
+		{ "color0",		STRING,	 &selfgcolor },
+		{ "color4",		STRING,	 &selbgcolor },
 		{ "color0",             STRING,  &termcol0 },
 		{ "color1",             STRING,  &termcol1 },
 		{ "color2",             STRING,  &termcol2 },
