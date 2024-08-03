@@ -19,9 +19,8 @@ static const int showsystray             = 1;        /* 0 means no systray */
 static int showbar           		 = 1;        /* 0 means no bar */
 static int topbar            		 = 1;        /* 0 means bottom bar */
 static int user_bh                       = 6;        /* 2 is the default spacing around the bar's font */
-static char font[]           		 = "IosevkaMayukaiCodePro:size=10";
-static char dmenufont[]      		 = "IosevkaMayukaiCodePro:size=10";
-static const char *fonts[]         	 = { font, "SymbolsNerdFont:size=14", };
+static char dmenufont[]      		 = "monospace:size=10";
+static const char *fonts[]         	 = { "monospace:size=10", "Noto Sans CJK JP:style=bold:size=10", "NotoColorEmoji:pixelsize=10:antialias=true:autohint=true"  };
 static char normbgcolor[]          	 = "#222222";
 static char normbordercolor[]      	 = "#444444";
 static char normfgcolor[]          	 = "#bbbbbb";
@@ -93,7 +92,7 @@ static Sp scratchpads[] = {
 };
 
 /* tagging */
-static const char *tags[]         = { "", "", "󰈹", "󰓇", "󰠖", "󱍢", "", "", "" };
+static const char *tags[]         = { "一", "二", "三", "四", "五", "六", "七", "八", "九" };
 static const char *tagsalt[] 	  = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 static const int momentaryalttags = 0; /* 1 means alttags will show only when key is held down*/
 
@@ -152,11 +151,11 @@ static const Layout layouts[] = {
  */
 ResourcePref resources[] = {
 		{ "color0",		STRING,	 &normbordercolor },
-		{ "color6",		STRING,	 &selbordercolor },
-		{ "background",		STRING,	 &normbgcolor },
-		{ "foreground",		STRING,	 &normfgcolor },
+		{ "color8",		STRING,	 &selbordercolor },
+		{ "color0",		STRING,	 &normbgcolor },
+		{ "color6",		STRING,	 &normfgcolor },
 		{ "color0",		STRING,	 &selfgcolor },
-		{ "color6",		STRING,	 &selbgcolor },
+		{ "color14",		STRING,	 &selbgcolor },
 		{ "color0",             STRING,  &termcol0 },
 		{ "color1",             STRING,  &termcol1 },
 		{ "color2",             STRING,  &termcol2 },
@@ -179,7 +178,7 @@ ResourcePref resources[] = {
 		{ "topbar",		INTEGER, &topbar },
 		{ "nmaster",		INTEGER, &nmaster },
 		{ "resizehints",	INTEGER, &resizehints },
-		{ "mfact",		FLOAT,	&mfact },
+		{ "mfact",		FLOAT,	 &mfact },
 		{ "gappih",		INTEGER, &gappih },
 		{ "gappiv",		INTEGER, &gappiv },
 		{ "gappoh",		INTEGER, &gappoh },
