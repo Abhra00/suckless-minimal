@@ -18,7 +18,7 @@ static const int systraypinningfailfirst = 1;        /* 1: if pinning fails, dis
 static const int showsystray             = 1;        /* 0 means no systray */
 static int showbar           		 = 1;        /* 0 means no bar */
 static int topbar            		 = 1;        /* 0 means bottom bar */
-static int user_bh                       = 6;        /* 2 is the default spacing around the bar's font */
+static int user_bh                       = 10;        /* 2 is the default spacing around the bar's font */
 static char dmenufont[]      		 = "IosevkaMayukaiCodepro:size=10";
 static const char *fonts[]         	 = { "IosevkaMayukaiCodepro:size=10" ,"Symbols Nerd Font:size=12", "Noto Sans CJK JP:style=bold:size=10" };
 static char normbgcolor[]          	 = "#222222";
@@ -235,7 +235,15 @@ static const char *emojicmd[]   = { "dmenuunicode",   NULL };
 static const char *torrentcmd[] = { "td-toggle",   NULL };
 
 /* screenshotcmd */
-static const char *sscmd[]      = { "flameshot", "gui", NULL };
+static const char *sscmd[]         = { "maimshot",  NULL };
+
+/* {mount/unmount}cmd */
+static const char *mountcmd[]      = { "mounter",  NULL };
+static const char *unmountcmd[]    = { "unmounter",  NULL };
+
+/* networking-cmds */
+static const char *netmancmd[]     = { "dmenu-netman",  NULL };
+static const char *bluemancmd[]    = { "dmenu-bluetooth",  NULL };
 
 /* jgmenucmd */
 static const char *jgmenucmd[] = {"jgmenu_run", NULL};
@@ -300,7 +308,11 @@ static const Key keys[] = {
 	{ MODKEY|ControlMask,           XK_period,      cyclelayout,    {.i = +1 } },
 	{ MODKEY,                       XK_space,       setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,       togglefloating, {0} },
-	{ MODKEY,                       XK_F5,          xrdb,           {.v = NULL } },
+	{ MODKEY,                       XK_F1,          xrdb,           {.v = NULL } },
+	{ MODKEY,			XK_F2,          spawn,          {.v = mountcmd } },
+	{ MODKEY,			XK_F3,          spawn,          {.v = unmountcmd } },
+	{ MODKEY,			XK_F4,          spawn,          {.v = netmancmd } },
+	{ MODKEY,			XK_F5,          spawn,          {.v = bluemancmd } },
 	{ 0,         XF86XK_AudioMute,	          	spawn,	        {.v = vol_mute } },
 	{ 0,         XF86XK_AudioRaiseVolume,	  	spawn,	        {.v = vol_up } },
 	{ 0,         XF86XK_AudioLowerVolume,	  	spawn,	        {.v = vol_down } },
