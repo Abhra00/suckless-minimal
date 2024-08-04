@@ -65,7 +65,7 @@ static char *termcolor[] 		 = {
 static char *colors[][3] 		 = {
        /*               	fg           bg            border   	*/
        [SchemeNorm] 	  = { normfgcolor, normbgcolor,  normbordercolor },
-       [SchemeSel]  	  = { selfgcolor,  selbgcolor,   selbordercolor  },
+       [SchemeSel]  	  = { selfgcolor,  termcol4,     selbordercolor  },
        [SchemeTitle]      = { termcol15,   selbgcolor,   normbordercolor },
        [SchemeLayout]     = { termcol13,   normbgcolor,  normbordercolor },
 };
