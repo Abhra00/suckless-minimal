@@ -65,8 +65,8 @@ static char *termcolor[] 		 = {
 static char *colors[][3] 		 = {
        /*               	fg           bg            border   	*/
        [SchemeNorm] 	  = { normfgcolor, normbgcolor,  normbordercolor },
-       [SchemeSel]  	  = { selfgcolor,  termcol4,     selbordercolor  },
-       [SchemeTitle]      = { termcol15,   selbgcolor,   normbordercolor },
+       [SchemeSel]  	  = { selfgcolor,  selbgcolor,   selbordercolor  },
+       [SchemeTitle]      = { selfgcolor,  selbgcolor,   selbordercolor  },
        [SchemeLayout]     = { termcol13,   normbgcolor,  normbordercolor },
 };
 
@@ -152,11 +152,11 @@ static const Layout layouts[] = {
  */
 ResourcePref resources[] = {
 		{ "color0",		STRING,	 &normbordercolor },
-		{ "color8",		STRING,	 &selbordercolor },
+		{ "color4",		STRING,	 &selbordercolor },
 		{ "background",		STRING,	 &normbgcolor },
 		{ "foreground",		STRING,	 &normfgcolor },
-		{ "color15",		STRING,	 &selfgcolor },
-		{ "color0",		STRING,	 &selbgcolor },
+		{ "color0",		STRING,	 &selfgcolor },
+		{ "color4",		STRING,	 &selbgcolor },
 		{ "color0",             STRING,  &termcol0 },
 		{ "color1",             STRING,  &termcol1 },
 		{ "color2",             STRING,  &termcol2 },
