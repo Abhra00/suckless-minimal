@@ -4,8 +4,8 @@
 #define ICONSPACING 5 /* space between icon and title */
 
 /* appearance */
-static unsigned int borderpx  	    	 = 3;        /* border pixel of windows */
-static const unsigned int fborderpx      = 5;        /* border pixel of floating windows */
+static unsigned int borderpx  	    	 = 1;        /* border pixel of windows */
+static const unsigned int fborderpx      = 2;        /* border pixel of floating windows */
 static unsigned int snap      	    	 = 32;       /* snap pixel */
 static unsigned int gappih    		 = 20;       /* horiz inner gap between windows */
 static unsigned int gappiv    		 = 10;       /* vert inner gap between windows */
