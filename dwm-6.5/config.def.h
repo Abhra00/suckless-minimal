@@ -67,7 +67,7 @@ static char *colors[][3] 		 = {
        [SchemeNorm] 	  = { normfgcolor, normbgcolor,  normbordercolor },
        [SchemeSel]  	  = { selfgcolor,  selbgcolor,   selbordercolor  },
        [SchemeTitle]      = { selfgcolor,  selbgcolor,   selbordercolor  },
-       [SchemeLayout]     = { termcol13,   normbgcolor,  normbordercolor },
+       [SchemeLayout]     = { termcol1,   normbgcolor,  normbordercolor },
 };
 
 
@@ -154,7 +154,7 @@ ResourcePref resources[] = {
 		{ "color0",		STRING,	 &normbordercolor },
 		{ "color1",		STRING,	 &selbordercolor },
 		{ "color0",		STRING,	 &normbgcolor },
-		{ "color4",		STRING,	 &normfgcolor },
+		{ "color15",		STRING,	 &normfgcolor },
 		{ "color0",		STRING,	 &selfgcolor },
 		{ "color4",		STRING,	 &selbgcolor },
 		{ "color0",             STRING,  &termcol0 },
