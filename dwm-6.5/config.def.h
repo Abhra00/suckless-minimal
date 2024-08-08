@@ -152,9 +152,9 @@ static const Layout layouts[] = {
  */
 ResourcePref resources[] = {
 		{ "color0",		STRING,	 &normbordercolor },
-		{ "color4",		STRING,	 &selbordercolor },
-		{ "background",		STRING,	 &normbgcolor },
-		{ "foreground",		STRING,	 &normfgcolor },
+		{ "color1",		STRING,	 &selbordercolor },
+		{ "color0",		STRING,	 &normbgcolor },
+		{ "color4",		STRING,	 &normfgcolor },
 		{ "color0",		STRING,	 &selfgcolor },
 		{ "color4",		STRING,	 &selbgcolor },
 		{ "color0",             STRING,  &termcol0 },
