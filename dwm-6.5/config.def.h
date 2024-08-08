@@ -67,7 +67,7 @@ static char *colors[][3] 		 = {
        [SchemeNorm] 	  = { normfgcolor, normbgcolor,  normbordercolor },
        [SchemeSel]  	  = { selfgcolor,  selbgcolor,   selbordercolor  },
        [SchemeTitle]      = { selfgcolor,  selbgcolor,   selbordercolor  },
-       [SchemeLayout]     = { termcol1,   normbgcolor,  normbordercolor },
+       [SchemeLayout]     = { termcol11,   normbgcolor,  normbordercolor },
 };
 
 
