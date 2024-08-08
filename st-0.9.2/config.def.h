@@ -130,42 +130,38 @@ float alpha = 1.0;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-    /* 8 normal colors */
-    "#3B4252", /* black     */
-    "#BF616A", /* red       */
-    "#A3BE8C", /* green     */
-    "#EBCB8B", /* yellow    */
-    "#81A1C1", /* blue      */
-    "#B48EAD", /* magenta   */
-    "#88C0D0", /* cyan      */
-    "#E5E9F0", /* white     */
-
-    /* 8 bright colors */
-    "#4C566A", /* black (bright)   */
-    "#BF616A", /* red (bright)     */
-    "#A3BE8C", /* green (bright)   */
-    "#EBCB8B", /* yellow (bright)  */
-    "#81A1C1", /* blue (bright)    */
-    "#B48EAD", /* magenta (bright) */
-    "#8FBCBB", /* cyan (bright)    */
-    "#ECEFF4", /* white (bright)   */
-    [255] = 0,
-
-    /* more colors can be added after 255 to use with DefaultXX */
-    "#D8DEE9", /* cursorcolor */
-    "#2E3440", /* reverse cursor color */
-    "#D8DEE9", /* default foreground color */
-    "#2E3440", /* default background color */
+	"#282828", /* hard contrast: #1d2021 / soft contrast: #32302f */
+	"#cc241d",
+	"#98971a",
+	"#d79921",
+	"#458588",
+	"#b16286",
+	"#689d6a",
+	"#a89984",
+	"#928374",
+	"#fb4934",
+	"#b8bb26",
+	"#fabd2f",
+	"#83a598",
+	"#d3869b",
+	"#8ec07c",
+	"#ebdbb2",
+	[255] = 0,
+	/* more colors can be added after 255 to use with DefaultXX */
+	"#add8e6", /* 256 -> cursor */
+	"#555555", /* 257 -> rev cursor*/
+	"#282828", /* 258 -> bg */
+	"#ebdbb2", /* 259 -> fg */
 };
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 258; /* #edeff0 (color 15) */
-unsigned int defaultbg = 259; /* #0c0e0f (color 0) */
-unsigned int defaultcs = 255; /* #edeff0 (cursor color) */
-static unsigned int defaultrcs = 256; /* #0c0e0f (reverse cursor color) */
+unsigned int defaultfg = 259;
+unsigned int defaultbg = 258;
+unsigned int defaultcs = 256;
+unsigned int defaultrcs = 257;
 
 /*
  * https://invisible-island.net/xterm/ctlseqs/ctlseqs.html#h4-Functions-using-CSI-_-ordered-by-the-final-character-lparen-s-rparen:CSI-Ps-SP-q.1D81
